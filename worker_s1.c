@@ -70,8 +70,8 @@ int main (int argc, char * argv[])
     }
     // else: parse the arguments...
 
-    const char *s1_name = argv[1];
-    const char *rsp_name = argv[2];
+    const char *s1_name = argv[0];
+    const char *rsp_name = argv[1];
     mqd_t mq_s1;
     mqd_t mq_rsp;
     WorkerRequest req;
@@ -97,7 +97,7 @@ int main (int argc, char * argv[])
     while (req.job >= 0)
     {
 
-        // Send the message
+        // Recieve the message
         int result_recieve = mq_send(mq_s1, (char*)&req, sizeof(req), 0);
         if(result_recieve == -1)
         {

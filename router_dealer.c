@@ -87,7 +87,7 @@ int main (int argc, char * argv[])
     pid_t client_pid = fork();
     if (client_pid == 0){
       execlp("./client", "client_child", client2dealer_name, NULL);
-      perror("Failed to start client!")
+      perror("Failed to start client!");
       exit(1);
     }
 
@@ -96,7 +96,7 @@ int main (int argc, char * argv[])
       worker1_pid[i] = fork();
       if (worker1_pid[i] == 0){
         execlp("./worker_s1", "worker_s1_child", worker2dealer_name, NULL);
-        perror("Failed to start worker S1!")
+        perror("Failed to start worker S1!");
         exit(1);
       }
     } 
@@ -106,7 +106,7 @@ int main (int argc, char * argv[])
       worker2_pid[i] = fork();
       if (worker2_pid[i] == 0){
         execlp("./worker_s2", "worker_s2_child", worker2dealer_name, NULL);
-        perror("Failed to start worker S2!")
+        perror("Failed to start worker S2!");
         exit(1);
       }
     } 
