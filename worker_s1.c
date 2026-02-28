@@ -27,7 +27,6 @@
 #include "service1.h"
 
 static void rsleep (int t);
-// static void message_queue(int argc, char * argv[]);
 
 int main (int argc, char * argv[])
 {
@@ -144,9 +143,3 @@ static void rsleep (int t)
     }
     usleep (random() % t);
 }
-
-
-// static void message_queue(int argc, char * argv[]) 
-// {
-    
-// }
